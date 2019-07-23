@@ -2,23 +2,25 @@
 [![Coverage](https://img.shields.io/codecov/c/github/lima1/PureCN.svg)](https://codecov.io/gh/lima1/PureCN)
 [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0) 
 
-# Cesar
+# 💡 Cesar
 
 A tool developed for tumor-only copy number estimation for targeted capture sequencing data with segmentation and anchor-based recalibration.
 
 * [中文版说明文档](https://github.com/nishuai/Cesar/blob/master/docs/Casar%E6%A3%80%E6%B5%8BNSCLC%E6%82%A3%E8%80%85ctDNA%E4%B8%AD%E7%9A%84CNV.docx?raw=true)
 
 
-## 💡 Installation
+## 🏘️ Installation
 
 To install Cesar, simply copy the repository to your local destination
 
 ```
 wget https://github.com/nishuai/Cesar/archive/master.zip
 unzip master.zip && mv master Cesar
-
 ```
-
+And make sure the `MASS` package is installed in your local environment, in R:
+```
+install.packages('MASS')
+```
 
 ## ⚡ How to use
 
