@@ -8,10 +8,8 @@ A tool developed for tumor-only copy number estimation for targeted capture sequ
 
 * [中文版说明文档](https://github.com/nishuai/Cesar/blob/master/docs/Casar%E6%A3%80%E6%B5%8BNSCLC%E6%82%A3%E8%80%85ctDNA%E4%B8%AD%E7%9A%84CNV.docx?raw=true)
 
-<p align = "center">
-<img alt="BND" width="128" src="https://raw.githubusercontent.com/b3log/baidu-netdisk-downloaderx/master/bnd2/react/public/logo.png">
-<br><br>
-## Installation
+
+## 💡 Installation
 
 To install Cesar, simply copy the repository to your local destination
 
@@ -22,7 +20,7 @@ unzip master.zip && mv master Cesar
 ```
 
 
-## How to use
+## ⚡ How to use
 
 Cesar is designed for use in a specific target capture sequencing panel with limited number of genes to test for CNV status, if one needs to train Cesar for their own panel, go to line 122 in Training_anchors_clinic.R and change the target regions for CNV detection, the numbers in line 122 corresponds to line number in the given bed file. 
 
