@@ -36,8 +36,7 @@ Rscript Cesar.R mpileups/met2.1875ERBB2.625/703-13.sort.bam.mpileup.freq output_
 This will generate a file called {input_sample_name}.cnv. Where it contains the CNV states for genes we specified.
 
 
-
-[说明文档](https://github.com/nishuai/Cesar/blob/master/docs/Casar%E6%A3%80%E6%B5%8BNSCLC%E6%82%A3%E8%80%85ctDNA%E4%B8%AD%E7%9A%84CNV.docx?raw=true)
+* [中文版说明文档](https://github.com/nishuai/Cesar/blob/master/docs/Casar%E6%A3%80%E6%B5%8BNSCLC%E6%82%A3%E8%80%85ctDNA%E4%B8%AD%E7%9A%84CNV.docx?raw=true)
 
 
 
