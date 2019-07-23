@@ -29,13 +29,13 @@ The training takes a directory with at least 5 processed pileup files, the pileu
 ```
 Rscript Training_anchors_clinic.R inputdata/segmented_bed_30k.bed mpileups/normal/ output_dir
 ```
-Depending on the number of training samples give, the training process will typically take about some few minuts to complete. This step will generate 2 model files for Cesar.R as input. the 'output_dir/model_anchors.rda' and 'output_dir/model_parameters.rda'.
+Depending on the number of training samples give, the training process will typically take about some few minuts to complete. This step will generate 2 model files for Cesar.R as input. the `output_dir/model_anchors.rda` and `output_dir/model_parameters.rda`.
 
 After learning form normal samples, Cesar can be used to detect CNV in abnormal samples:
 ```
 Rscript Cesar.R mpileups/met2.1875ERBB2.625/703-13.sort.bam.mpileup.freq output_dir/model_anchors.rda output_dir/model_parameters.rda outputdir
 ```
-This will generate a file called '{input_sample_name}.cnv'. Where it contains the CNV states for genes we specified.
+This will generate a file called `{input_sample_name}.cnv`. Where it contains the CNV states for genes we specified.
 
 
 
