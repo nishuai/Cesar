@@ -26,19 +26,19 @@ install.packages('MASS')
 
 ## ⚡ How to use
 
-Cesar is designed for use in a specific target capture sequencing panel with limited number of genes to test for CNV status, if one needs to train Cesar for their own panel, go to line 122 in Training_anchors_clinic.R and change the target regions for CNV detection, the numbers in line 122 corresponds to line number in the given bed file. 
+Cesar is designed for use in a specific target capture sequencing panel with all genes to test for CNV status. It detectets abnormal CNV status by learning from a bunch of normal samples with no CNV. 
 
-The training takes a directory with at least 5 processed pileup files, the pileups shoud be ending with *.freq. Only the first 3 columns is used for Cesar, the first 3 columns should be Chromosome, position and read depth. If you are all set, you can try with an example comes with Cesar:
+The training usually requires learning from 10-100 normal samples with site specific coverage information in a pileup format. The first 3 columns in a pileup file should be Chromosome (chr1), position (122975) and read depth (3006). To get your hands on Cesar, you can try to run an example demo comes with Cesar:
 
 ### Example run for trainning Cesar:
 ```
-Rscript Training_anchors_clinic.R inputdata/segmented_bed_30k.bed mpileups/normal/ output_dir
+Rscript Training_anchors.R inputdata/example.bed mpileups/normal_pileups/ output_dir
 ```
-Depending on the number of training samples give, the training process will typically take about some few minuts to complete. This step will generate 2 model files for Cesar.R as input. the `output_dir/model_anchors.rda` and `output_dir/model_parameters.rda`.
+Depending on the number of training samples given, the training process will typically take about some few minuts to complete. This step will generate 2 model files for Cesar.R in Rdata format. the `output_dir/model_anchors.rda` and `output_dir/model_parameters.rda`.
 
-After learning form normal samples, Cesar can be used to detect CNV in abnormal samples:
+After learning form normal samples, Cesar can be used to detect CNV in a test sample:
 ```
-Rscript Cesar.R mpileups/met2.1875ERBB2.625/703-13.sort.bam.mpileup.freq output_dir/model_anchors.rda output_dir/model_parameters.rda outputdir
+Rscript Cesar.R mpileups/test.mpileup output_dir/model_anchors.rda output_dir/model_parameters.rda outputdir
 ```
 This will generate a file called `{input_sample_name}.cnv`. Where it contains the CNV states for genes we specified.
 
